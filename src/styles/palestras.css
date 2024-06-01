@@ -1,0 +1,287 @@
+
+.title-palestras{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+}
+.cards-palestrantes{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 35px;
+  justify-content: space-around;
+  padding: 70px 30px 150px 30px
+   
+    
+}
+.card-container {
+  width: 250px;
+  height: 350px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px #322146; 
+}
+
+
+
+.card .front-content{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+
+}
+
+.card .palestrante {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: .2s;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card .nome-palestrante {
+  font-size: 26px;
+  width: 250px;
+  display: flex;
+  font-weight: 700;
+  opacity: 1;
+  color: #e8e8e8;
+  background-color: #9711ff;
+  position: absolute;
+  bottom: 0;
+  right: 0;  
+  z-index: 2;
+  padding: 5px 15px;
+  justify-content: center;
+
+  
+}
+.card .info-palestrante{
+  font-size: 18px;
+  top: 90%;
+  left: 55%;
+  width: 220px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #e8e8e8;
+  background-color: #9711ff;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  position: absolute;
+  padding: 5px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.card .content h1{
+  font-size: 20px;
+  font-weight: 900;
+  
+  position: absolute;
+  top:  0px;
+  color: var(--color-primary-1);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  z-index: 9;
+  background-color: var(--color-neutral-1);
+  opacity: 0;
+  transition: .5s;
+  transition-delay: .2s;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.card .content {
+  position: absolute; 
+  width: 0%;
+  height: 0%;
+  overflow: hidden; 
+  transition: .2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px; 
+  color: #e8e8e8; 
+  line-height: 1.5;
+  border-radius: 5px;  
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 3;
+}
+
+.card .content .titulo-palestra {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.card:hover .content {
+  height: 100%;
+  padding: 10px;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.274);
+  /* transform: translateY(0); */
+}
+.card:hover .content h1{
+  opacity: 1;
+}
+.card:hover .content .titulo-palestra2{
+  width: 95%;
+  opacity: 1;
+}
+.card:hover .content .ver_palestra{
+  opacity: 1;
+}
+
+
+
+.card:hover .front-content {
+  /* transform: translateX(-30%); */
+}
+
+.card:hover .front-content p {
+  /* opacity: 0; */
+}
+.blocoFundo{
+  position: absolute; 
+  height:250px;
+  width: 250px; 
+  background-color: rgba(0, 0, 0, 0);
+}
+.blocoFundo.active{
+  
+  backdrop-filter: blur(20px);
+}
+.titulo-palestra2{
+  z-index: 9;
+  font-size: 20px;
+  font-weight: 700;
+  transition-delay: .2s;
+  transition: .2s;
+  opacity: 0;
+}
+.ver_palestra{
+  text-decoration: none;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px 20px;
+  border: 2px solid var(--color-primary-1);
+  position: absolute;
+  bottom: 50px;
+  z-index: 9;
+  overflow: hidden;
+  transition-delay: .2s;
+  transition: .2s;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ver_palestra::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  transition: .5s;
+  background-color: #322146;
+  
+}
+.span_btn_inscricao{
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+.ver_palestra:hover::before{
+  width: 100%;
+  background-color: #9711ff;
+  
+}
+.area_icons{
+
+  position: absolute;
+  top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  font-size: 30px;
+
+}
+.seta{
+  transition: .2s;
+  position: absolute;
+  top: 50%;
+  height: 35px;
+  width: 35px;
+  background-color: #9711ff;
+  z-index: 4;
+  transform: translate(0%,-50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+.seta i{
+  pointer-events: none;
+}
+.seta_left{ 
+  left: -17px; 
+}
+.seta_right{ 
+  right: -17px; 
+}
+.seta_right:hover{
+  height: 50px;
+  width: 50px;
+  right: -25px;
+  font-size: 22px;
+  background-color: var(--color-neutral-1);
+}
+.seta_left:hover{
+  height: 50px;
+  width: 50px;
+  left: -25px;
+  font-size: 22px;
+  background-color: var(--color-neutral-1);
+}
+ 
+
+#palestras{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  margin-top: 30px;
+  overflow: hidden ;
+  position: relative; 
+}
+
+@media (max-width:550px) {
+
+  .cards-palestrantes{
+    padding: 0;
+  }
+}
